@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tausif Ahmed | Founder &amp; CEO, Purplecop Security</title>
+<meta name="description" content="Tausif Ahmed, Founder and CEO of Purplecop Security. GRC, AI governance and post-quantum readiness, worked on in the open.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600&family=Instrument+Sans:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap">
+<style>
+/* Direction C, minimal look with depth.
+   Hero: split screen. A quiet name lockup on the left with one thin red rule; the
+   portrait owns the right half with nothing on it; a thin, muted standards strip below.
+   Below: a scroll-read statement, a career told against a pinned timeline, a wall of
+   standards, tabbed products, a public ledger, posts, videos, the newsletter and links.
+   Red is an accent only. Glass is used only for the proof numbers. */
+:root{
+  --navy:#1a1a2e;
+  --navy-2:#161627;
+  --white:#f4f4f8;
+  --soft:#a9abc2;
+  --mute:#7f819b;
+  --line:rgba(255,255,255,.10);
+  --paper:#f6f6f9;
+  --card:#ffffff;
+  --ink:#1a1a2e;
+  --ink-soft:#50526a;
+  --ink-mute:#74768e;
+  --rule:#e3e4ed;
+  --red:#ff1137;
+  --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",sans-serif;
+  --sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"Spline Sans Mono","SF Mono",Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--navy);color:var(--white);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+ul,ol{list-style:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.arr{width:14px;height:14px;flex:none}
+
+/* ---------- scroll progress + sticky bar ---------- */
+.prog{position:fixed;inset:0 0 auto 0;height:2px;z-index:60;background:var(--red);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
+.bar{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;height:52px;
+  padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));
+  background:rgba(26,26,46,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);transform:translateY(-101%);visibility:hidden;transition:transform .35s ease,visibility 0s .35s}
+.bar.on{transform:none;visibility:visible;transition:transform .35s ease,visibility 0s}
+.wm{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.06em;text-transform:uppercase;line-height:1;white-space:nowrap;color:var(--white)}
+.nav{display:flex;align-items:center;gap:21px;font-size:14px;color:var(--soft);white-space:nowrap}
+.nav a{transition:color .2s}
+.nav a:hover,.nav a.cur{color:var(--white)}
+.follow{font-size:14px;white-space:nowrap;color:var(--white);font-weight:500;border-bottom:1px solid var(--red);padding-bottom:3px}
+
+/* ---------- hero ---------- */
+.split{display:grid;grid-template-columns:1fr}
+.left{display:flex;flex-direction:column;
+  padding-block:22px 36px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));
+  background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.name{font-family:var(--display);font-weight:600;text-transform:uppercase;line-height:.94;letter-spacing:.012em;
+  font-size:clamp(60px,18.5vw,76px);margin-top:40px}
+.name span{display:block}
+.name::after{content:"";display:block;width:52px;height:3px;background:var(--red);margin-top:18px}
+.role{margin-top:26px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.role b{color:var(--red);font-weight:500}
+.say{font-size:21px;font-weight:500;line-height:1.3;letter-spacing:-.012em;max-width:19em;margin-top:12px;text-wrap:balance}
+.sub{font-size:15.5px;color:var(--soft);max-width:31em;margin-top:14px;line-height:1.65}
+.acts{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:14.5px;padding:12px 20px;border-radius:3px;transition:background-color .2s,color .2s,border-color .2s}
+.btn.primary{background:var(--red);color:#fff}
+.btn.primary:hover{background:#e20a2e}
+.btn.line{padding:0 0 3px;border-radius:0;font-weight:500;border-bottom:1px solid rgba(255,255,255,.4)}
+.btn.line:hover{border-color:var(--white)}
+.facts{display:grid;grid-template-columns:1fr;margin-top:40px;border:1px solid var(--line);border-radius:10px;
+  background:linear-gradient(140deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.fact{padding:14px 18px}
+.fact .v{font-family:var(--display);font-weight:600;font-size:25px;line-height:1;letter-spacing:.02em;text-transform:uppercase}
+.fact .l{font-size:13px;color:var(--soft);margin-top:5px}
+.fact .s{font-family:var(--mono);font-size:10.5px;color:var(--mute);margin-top:3px}
+/* portrait: full bleed in its own half, no overlays of any kind */
+.right{background:#6d6e73;order:-1;overflow:hidden}
+.right img{display:block;width:100%;height:100%;aspect-ratio:690/760;object-fit:cover;object-position:50% 20%}
+/* ticker: a thin, quiet strip */
+.ticker{background:var(--navy-2);color:var(--mute);overflow:hidden;white-space:nowrap;border-top:1px solid var(--line)}
+.track{display:inline-flex;padding-left:24px;animation:run 90s linear infinite}
+.track span{display:inline-flex;align-items:center;font-family:var(--sans);font-weight:500;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;padding-block:14px}
+.track span::after{content:"";width:4px;height:4px;border-radius:50%;margin-inline:22px;background:var(--red)}
+.ticker:hover .track{animation-play-state:paused}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* ---------- section shell ---------- */
+.sec{position:relative;padding-block:72px 76px;scroll-margin-top:52px}
+.in{max-width:1366px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.sec.lt{color:var(--ink)}
+.sec.white{background:var(--card)}
+.sec.paper{background:var(--paper)}
+.sec.dk{background:var(--navy)}
+.sec.dk2{background:var(--navy-2)}
+.kick{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.kick b{color:var(--red);font-weight:500}
+.lt .kick{color:var(--ink-mute)}
+h2{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:38px;line-height:1.02;letter-spacing:.012em;margin-top:16px;text-wrap:balance}
+h2 .w{display:inline-block}
+.lede{font-size:17px;line-height:1.6;color:var(--soft);max-width:35em;margin-top:18px}
+.lt .lede{color:var(--ink-soft)}
+.srcm{font-family:var(--mono);font-size:11px;line-height:1.5;color:var(--mute)}
+.lt .srcm{color:var(--ink-mute)}
+.ext{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:14px;white-space:nowrap;border-bottom:1px solid var(--red);padding-bottom:2px}
+.ext .arr{transition:transform .25s ease}
+.ext:hover .arr{transform:translate(2px,-2px)}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:99px;border:1px solid var(--line);color:var(--soft);white-space:nowrap}
+.pill::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--red)}
+
+/* ---------- statement: read as you scroll ---------- */
+.statement{padding-block:84px 88px;border-top:1px solid var(--line)}
+.stm{font-size:27px;font-weight:500;line-height:1.24;letter-spacing:-.018em;max-width:21em;margin-top:22px}
+.stm .w{display:inline-block}
+
+/* ---------- story: chapters against a pinned timeline ---------- */
+.st{display:grid;grid-template-columns:1fr;gap:8px;margin-top:40px}
+.st-vis{position:relative;z-index:5;background:var(--navy);color:var(--white);border-radius:8px;padding:16px 18px 16px;box-shadow:0 -14px 0 var(--card),0 10px 0 var(--card)}
+.sv-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.sv-main{display:flex;align-items:baseline;gap:14px;margin-top:6px}
+.sv-year{font-family:var(--display);font-weight:600;font-size:44px;line-height:1;letter-spacing:.02em;text-transform:uppercase;min-width:2.4em}
+.sv-role{font-size:14px;color:var(--soft);line-height:1.3}
+.sv-bar{display:flex;gap:3px;height:6px;margin-top:14px}
+.sv-bar i{display:block;height:100%;border-radius:2px;background:rgba(255,255,255,.16);transition:background-color .35s ease}
+.sv-bar i.gap{background:transparent}
+.sv-bar i.on{background:var(--red)}
+.sv-bar i.all{background:rgba(255,255,255,.5)}
+.sv-ax{display:flex;gap:3px;margin-top:7px;font-family:var(--mono);font-size:10px;color:var(--mute)}
+.sv-ax span{display:block;overflow:visible;white-space:nowrap}
+.sv-foot{display:none}
+.chap{padding-block:26px;border-bottom:1px solid var(--rule);transition:opacity .35s ease}
+.st.live .chap{opacity:.38}
+.st.live .chap.on{opacity:1}
+.chap .when{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute)}
+.chap h3{font-size:21px;font-weight:600;letter-spacing:-.014em;line-height:1.25;margin-top:6px}
+.chap p.t{color:var(--ink-soft);margin-top:6px;max-width:36em}
+.chap .srcm{margin-top:10px}
+
+/* ---------- work: three areas, standards set large ---------- */
+.wl{margin-top:44px}
+.wl-row{display:grid;grid-template-columns:1fr;gap:18px;padding-block:28px;border-top:1px solid var(--line)}
+.wl-row h3{font-size:20px;font-weight:600;letter-spacing:-.012em;line-height:1.25}
+.wl-row p{color:var(--soft);margin-top:8px;max-width:30em}
+.wl-l{display:flex;flex-wrap:wrap;align-items:center;gap:6px 0}
+.wl-l li{display:inline-flex;align-items:center;font-family:var(--display);font-weight:600;font-size:25px;line-height:1.1;letter-spacing:.03em;text-transform:uppercase}
+.wl-l li::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--red);margin-inline:14px}
+.wl-l li:last-child::after{display:none}
+.wl-l li.topic{color:var(--mute)}
+.work-src{margin-top:8px;padding-top:26px;border-top:1px solid var(--line);max-width:none}
+
+/* ---------- products: tabs ---------- */
+.pt{display:grid;grid-template-columns:1fr;gap:18px;margin-top:40px}
+.pt-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pt-g{grid-column:1 / -1;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);margin-top:6px}
+.pt-tab{display:block;padding:12px 14px;border-radius:5px;background:rgba(26,26,46,.045);font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.03em;text-transform:uppercase;line-height:1.1;color:var(--ink-soft);box-shadow:inset 2px 0 0 transparent;transition:background-color .2s,color .2s,box-shadow .2s}
+.pt-tab.asis{text-transform:none}
+.pt-tab:hover{color:var(--ink)}
+.pt-tab[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:inset 2px 0 0 var(--red)}
+.pt-panels{display:grid;gap:14px}
+.pt-panel{background:var(--card);border-radius:8px;padding:26px 22px;scroll-margin-top:70px}
+.pt.tabs-on .pt-panel{display:none}
+.pt.tabs-on .pt-panel.on{display:block}
+.pt-panel .tagk{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
+.pt-panel h3{font-family:var(--display);font-weight:600;font-size:36px;line-height:1;text-transform:uppercase;letter-spacing:.015em;margin-top:10px}
+.pt-panel h3.asis{text-transform:none}
+.pt-panel p.t{color:var(--ink-soft);font-size:17px;line-height:1.55;margin-top:14px;max-width:32em}
+.pt-panel p.eco{font-size:14.5px;color:var(--ink-mute);margin-top:14px;max-width:38em}
+.pt-panel .ext{margin-top:22px}
+.pt-panel .srcm{margin-top:26px}
+
+/* ---------- in the open: scoreboard + ledger in the one frosted panel ---------- */
+.open::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(640px 420px at 92% 30%,rgba(255,17,55,.10),rgba(255,17,55,0) 70%)}
+.open .in{position:relative}
+.board{margin-top:44px;border:1px solid var(--line);border-radius:12px;
+  background:linear-gradient(150deg,rgba(255,255,255,.075) 0%,rgba(255,255,255,.025) 62%);
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.score{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.score div{padding:22px 16px 18px}
+.score b{display:block;font-family:var(--display);font-weight:600;font-size:56px;line-height:.9;font-variant-numeric:tabular-nums}
+.score span{display:block;font-size:13.5px;color:var(--soft);margin-top:8px}
+.lg-head{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.lg{position:relative;padding-left:16px}
+.lg-rail{position:absolute;left:21px;top:0;bottom:0;width:1px;background:rgba(255,255,255,.22);transform-origin:50% 0}
+.lg-row{position:relative;display:grid;grid-template-columns:1fr;gap:8px;padding:20px 16px 22px 28px;border-top:1px solid var(--line)}
+.lg-dot{position:absolute;left:1px;top:27px;width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(255,17,55,.16)}
+.lg-date{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--mute)}
+.lg-row h3{font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.lg-row h3 span{color:var(--mute);font-weight:500}
+.lg-row p.t{color:var(--soft);font-size:15px;margin-top:4px;max-width:44em}
+.lg-row p.f{font-family:var(--mono);font-size:10.5px;color:var(--mute);margin-top:6px}
+.lg-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.ledger{padding:16px 16px 18px;border-top:1px solid var(--line);color:var(--soft);font-size:14.5px}
+.note{margin-top:18px}
+
+/* ---------- writing ---------- */
+.wr{margin-top:40px;border-top:1px solid var(--rule)}
+.wr-row{display:grid;grid-template-columns:1fr;gap:6px;padding-block:22px;border-bottom:1px solid var(--rule)}
+.wr-row .when{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute)}
+.wr-row h3{font-size:20px;font-weight:600;letter-spacing:-.014em;line-height:1.25}
+.wr-row p.t{color:var(--ink-soft);margin-top:4px;max-width:44em}
+.wr-row .ext{justify-self:start;margin-top:6px}
+
+/* ---------- videos ---------- */
+.vd-note{display:inline-flex;margin-top:22px}
+.vds{display:grid;grid-template-columns:1fr;gap:26px;margin-top:36px}
+.vd img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:6px;background:#12091f}
+.vd .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:14px}
+.vd h3{font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.3;margin-top:5px}
+
+/* ---------- newsletter ---------- */
+.two{display:grid;grid-template-columns:1fr;gap:32px}
+.two .btn{margin-top:26px}
+.two .srcm{margin-top:16px}
+.ed{background:var(--card);border-radius:8px;padding:26px 22px;align-self:start}
+.ed h3{font-family:var(--display);font-weight:600;font-size:24px;line-height:1;text-transform:uppercase;letter-spacing:.03em}
+.ed p{color:var(--ink-soft);margin-top:10px}
+.ed .empty{margin-top:18px;padding:16px 18px;border-radius:4px;background:var(--paper);color:var(--ink-mute);font-size:14.5px}
+
+/* ---------- links + footer ---------- */
+.lks{margin-top:36px}
+.lk{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:4px 20px;padding-block:20px;border-top:1px solid var(--line)}
+.lk b{font-family:var(--display);font-weight:600;font-size:28px;line-height:1.05;text-transform:uppercase;letter-spacing:.02em}
+.lk span{grid-column:1;color:var(--mute);font-size:14.5px}
+.lk .arr{grid-column:2;grid-row:1 / span 2;width:20px;height:20px;color:var(--red);transition:transform .25s ease}
+.lk:hover .arr{transform:translate(3px,-3px)}
+footer{background:var(--navy-2);border-top:1px solid var(--line);color:var(--mute);font-size:13.5px;overflow:hidden}
+.ft{display:grid;grid-template-columns:1fr 1fr;gap:28px 20px;padding-block:44px 30px}
+.ft h4{font-family:var(--mono);font-size:10.5px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ft ul{margin-top:12px;display:grid;gap:7px;color:var(--soft);font-size:14.5px}
+.ft a:hover{color:var(--white)}
+.ft .about{grid-column:1 / -1;max-width:30em;font-size:14.5px;color:var(--soft)}
+.ft .about .wm{display:block;margin-bottom:10px}
+.sig{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.012em;line-height:.9;font-size:20.5vw;color:rgba(244,244,248,.07);white-space:nowrap;margin:0 0 14px -.03em;user-select:none}
+.ft-b{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-block:18px 26px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px}
+
+
+/* ---------- motion layer (2026-11-15) ---------- */
+.left{position:relative;overflow:hidden;isolation:isolate}
+.left>*:not(.field){position:relative;z-index:1}
+.field{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}
+.left::after{content:"";position:absolute;inset:auto -20% -30% auto;width:70%;height:70%;z-index:0;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(255,17,55,.16),rgba(255,17,55,0));filter:blur(10px)}
+.name .ch{display:inline-block;will-change:transform}
+.name .cw{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.04em}
+.right{position:relative}
+.right img{will-change:transform}
+.mag{will-change:transform}
+.board{position:relative;overflow:hidden}
+.board::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(420px 260px at var(--mx,50%) var(--my,50%),rgba(255,17,55,.10),transparent 70%)}
+.board:hover::before{opacity:1}
+.lg-row[data-status="merged"] .pill,.lg-row[data-status="accepted"] .pill{background:var(--red);border-color:var(--red);color:#fff}
+.lg-row[data-status="merged"] .pill::before,.lg-row[data-status="accepted"] .pill::before{background:#fff}
+.lg-row:not([data-status="merged"]):not([data-status="accepted"]) .lg-dot{background:var(--navy);box-shadow:0 0 0 2px var(--red)}
+/* lab */
+.lab{overflow:hidden}
+.lab::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(720px 460px at 8% 20%,rgba(255,17,55,.09),transparent 70%),
+             linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/48px 48px,
+             linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px) 0 0/48px 48px;
+  -webkit-mask-image:linear-gradient(180deg,#000 40%,transparent);mask-image:linear-gradient(180deg,#000 40%,transparent)}
+.lab .in{position:relative}
+.lab-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:40px}
+.lab-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid var(--line);border-radius:12px;
+  background:linear-gradient(150deg,rgba(255,255,255,.075),rgba(255,255,255,.02));-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.ls{padding:22px 18px;border-bottom:1px solid var(--line)}
+.ls:nth-child(odd){border-right:1px solid var(--line)}
+.ls:nth-last-child(-n+2){border-bottom:0}
+.ls b{display:block;font-family:var(--display);font-weight:600;font-size:52px;line-height:.9;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.ls span{display:block;font-size:14px;color:var(--soft);margin-top:8px}
+.ls i{display:block;font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--mute);margin-top:4px}
+.lab-feat{display:flex;flex-direction:column;gap:22px;justify-content:space-between}
+.lf li{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:baseline;gap:14px;padding-block:14px;border-bottom:1px solid var(--line)}
+.lf li:first-child{border-top:1px solid var(--line)}
+.lf b{font-family:var(--display);font-weight:600;font-size:30px;line-height:1;letter-spacing:.02em;color:var(--white);min-width:2.2em}
+.lf li:last-child b{color:var(--red);font-size:22px}
+.lf span{color:var(--soft);font-size:15px}
+.lab-feat .btn{align-self:flex-start}
+.fw-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.fw-strip span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);padding:7px 12px;border:1px solid var(--line);border-radius:99px;background:rgba(255,255,255,.03)}
+@media (min-width:900px){
+  .lab-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:56px;margin-top:64px;align-items:stretch}
+  .ls{padding:36px 36px 30px}
+  .ls b{font-size:84px}
+  .lf b{font-size:38px}
+  .lf span{font-size:16px}
+}
+@media (max-width:899px){
+  .nav{display:none}
+  .top{justify-content:flex-end}
+  .left{order:1}
+  .ticker{order:2}
+}
+@media (min-width:900px){
+  .bar{padding-left:max(64px,env(safe-area-inset-left,0px));padding-right:max(56px,env(safe-area-inset-right,0px))}
+  .page{display:grid;grid-template-rows:1fr auto;min-height:800px;height:100vh;max-height:860px}
+  .split{grid-template-columns:minmax(0,1fr) 46%;min-height:0}
+  .left{padding:28px 56px 44px 64px}
+  .right{order:0;min-height:0}
+  .right img{aspect-ratio:auto;height:100%}
+  .name{font-size:116px;margin-top:auto;margin-left:-3px}
+  .name::after{width:60px;margin-top:24px;margin-left:3px}
+  .role{margin-top:30px}
+  .say{font-size:24px;max-width:none;white-space:nowrap}
+  .sub{display:none}
+  .facts{grid-template-columns:.8fr 1fr 1.25fr;margin-top:auto}
+  .fact{padding:15px 18px}
+
+  .sec{padding-block:120px 124px}
+  .in{padding-left:max(64px,env(safe-area-inset-left,0px));padding-right:max(64px,env(safe-area-inset-right,0px))}
+  h2{font-size:58px;line-height:1;max-width:15em;margin-top:18px}
+  .lede{font-size:18px;margin-top:22px}
+  .statement{padding-block:150px 160px}
+  .stm{font-size:50px;line-height:1.16;max-width:21em;margin-top:30px}
+
+  .st{grid-template-columns:400px minmax(0,1fr);gap:88px;margin-top:64px;align-items:start}
+  .st-vis{padding:30px 30px 26px;border-radius:10px;box-shadow:none}
+  .sv-main{display:block;margin-top:34px}
+  .sv-year{font-size:120px;line-height:.9}
+  .sv-role{font-size:16px;margin-top:12px;min-height:2.6em}
+  .sv-bar{height:8px;margin-top:30px}
+  .sv-foot{display:flex;justify-content:space-between;margin-top:26px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+  .chap{padding-block:38px}
+  .chap:first-child{padding-top:6px}
+  .chap h3{font-size:26px}
+  .chap p.t{font-size:17px}
+
+  .wl{margin-top:64px}
+  .wl-row{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;padding-block:40px;align-items:start}
+  .wl-row h3{font-size:22px}
+  .wl-l li{font-size:36px}
+  .wl-l li::after{width:6px;height:6px;margin-inline:18px}
+  .wl-l{gap:10px 0}
+
+  .pt{grid-template-columns:320px minmax(0,1fr);gap:40px;margin-top:64px;align-items:start}
+  .pt-tabs{grid-template-columns:1fr;gap:6px}
+  .pt-g{margin-top:14px}
+  .pt-g:first-child{margin-top:0}
+  .pt-tab{padding:16px 18px;font-size:22px}
+  .pt-panel{padding:48px 48px 40px;min-height:380px}
+  .pt-panel h3{font-size:56px}
+  .pt-panel p.t{font-size:20px}
+
+  .board{margin-top:64px}
+  .score div{padding:36px 40px 30px}
+  .score b{font-size:92px}
+  .score span{font-size:15px}
+  .lg-head{padding:14px 40px}
+  .lg{padding-left:40px}
+  .lg-rail{left:45px}
+  .lg-row{grid-template-columns:150px minmax(0,1fr) auto;gap:28px;align-items:start;padding:28px 40px 30px 36px}
+  .lg-dot{top:35px}
+  .lg-date{padding-top:4px}
+  .lg-meta{flex-direction:column;align-items:flex-end;gap:14px}
+  .ledger{padding:20px 40px 24px;font-size:15.5px}
+
+  .wr{margin-top:64px}
+  .wr-row{grid-template-columns:150px minmax(0,1fr) auto;gap:28px;align-items:baseline;padding-block:28px}
+  .wr-row h3{font-size:23px}
+  .wr-row .ext{margin-top:0;justify-self:end}
+
+  .vds{grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 28px;margin-top:56px}
+  .two{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:72px;align-items:end}
+  .ed{padding:36px}
+  .lks{margin-top:56px}
+  .lk{padding-block:26px}
+  .lk b{font-size:40px}
+  .lk span{font-size:15.5px}
+  .lk .arr{width:24px;height:24px}
+  .ft{grid-template-columns:minmax(0,2fr) 1fr 1fr;gap:40px;padding-block:72px 40px}
+  .ft .about{grid-column:auto}
+  .sig{font-size:20.4vw}
+}
+@media (min-width:1367px){.sig{font-size:278px}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .board::before{display:none}
+  .track{animation:none}
+  .bar,.bar.on,.lk .arr,.ext .arr,.btn,.nav a,.chap,.sv-bar i,.pt-tab{transition:none}
+}
+
+/* helpers */
+.defs{position:absolute}
+.sv-bar .s0,.sv-ax .s0{flex:72 1 0}
+.sv-bar .s1,.sv-ax .s1{flex:8 1 0}
+.sv-bar .s2,.sv-ax .s2{flex:41 1 0}
+.sv-bar .s3,.sv-ax .s3{flex:37 1 0}
+.sv-bar .g1,.sv-ax .g1{flex:3 1 0}
+.sv-bar .s4,.sv-ax .s4{flex:55 1 0}
+.sv-bar .g2,.sv-ax .g2{flex:1 1 0}
+.sv-bar .s5,.sv-ax .s5{flex:33 1 0}
+.sv-ax span{min-width:0}
+</style>
+</head>
+<body>
+<svg class="defs" aria-hidden="true" width="0" height="0" focusable="false">
+  <symbol id="i-ne" viewBox="0 0 16 16"><path d="M4 12l8-8M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-e" viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+</svg>
+<div class="prog" id="prog" aria-hidden="true"></div>
+
+<div class="bar" id="bar">
+  <a class="wm" href="#top" aria-label="Tausif Ahmed, back to top">Tausif Ahmed</a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#story">Story</a><a href="#work">Work</a><a href="#products">Products</a><a href="#lab">GRC Lab</a><a href="#open">In the open</a><a href="#writing">Writing</a><a href="#videos">Videos</a><a href="#links">Links</a>
+  </nav>
+  <a class="follow" href="https://www.linkedin.com/in/tausif-ahmed-b5b8962a/" rel="noopener">Follow on LinkedIn</a>
+</div>
+
+<main>
+<div class="page hero" id="top">
+  <div class="split">
+    <section class="left">
+      <canvas class="field" id="field" aria-hidden="true"></canvas>
+      <header class="top">
+        <nav class="nav" aria-label="Primary">
+          <a href="#story">Story</a><a href="#work">Work</a><a href="#products">Products</a><a href="#lab">GRC Lab</a><a href="#open">In the open</a><a href="#writing">Writing</a><a href="#videos">Videos</a><a href="#links">Links</a>
+        </nav>
+        <a class="follow" href="https://www.linkedin.com/in/tausif-ahmed-b5b8962a/" rel="noopener">Follow on LinkedIn</a>
+      </header>
+
+      <h1 class="name" aria-label="Tausif Ahmed"><span class="l1">Tausif</span><span class="l2">Ahmed</span></h1>
+
+      <p class="role rise"><b>/</b> Founder &amp; CEO &middot; Purplecop Security</p>
+      <p class="say rise">Compliance has to stand up in front of an auditor.</p>
+      <p class="sub rise">I have spent more than a decade on the side of security that gets tested: controls, evidence and risk. Today I run Purplecop Security and I work in the open on the standards for AI governance and post-quantum readiness.</p>
+      <div class="acts rise">
+        <a class="btn primary mag" href="#open">See the public record <svg class="arr" aria-hidden="true"><use href="#i-e"/></svg></a>
+        <a class="btn line" href="https://purplecop.com" rel="noopener">Purplecop Security</a>
+      </div>
+
+      <div class="facts rise" aria-label="Sourced facts">
+        <div class="fact"><p class="v">5,464</p><p class="l">LinkedIn followers</p><p class="s">LinkedIn profile, 12 Nov 2026</p></div>
+        <div class="fact"><p class="v">ISO 27001</p><p class="l">Lead Auditor</p><p class="s">LinkedIn headline, 20 Aug 2026</p></div>
+        <div class="fact"><p class="v">Mar 2024</p><p class="l">Purplecop One, Mar 2024 to now</p><p class="s">LinkedIn experience, 20 Aug 2026</p></div>
+      </div>
+    </section>
+
+    <figure class="right">
+      <img src="assets/tausif.jpg" alt="Portrait of Tausif Ahmed" width="690" height="760">
+    </figure>
+  </div>
+
+  <div class="ticker" aria-label="Standards I work with">
+    <div class="track">
+      <span>ISO 27001</span><span>ISO/IEC 42001</span><span>DPDP Act</span><span>FIPS 203 (ML-KEM)</span><span>SOC 2</span><span>NIST AI RMF</span><span>EU AI Act</span><span>GDPR</span><span>SOX 404 / ITGC</span><span>FIPS 204 (ML-DSA)</span><span>FIPS 205 (SLH-DSA)</span><span>CBOM</span><span>CMMI</span>
+      <span aria-hidden="true">ISO 27001</span><span aria-hidden="true">ISO/IEC 42001</span><span aria-hidden="true">DPDP Act</span><span aria-hidden="true">FIPS 203 (ML-KEM)</span><span aria-hidden="true">SOC 2</span><span aria-hidden="true">NIST AI RMF</span><span aria-hidden="true">EU AI Act</span><span aria-hidden="true">GDPR</span><span aria-hidden="true">SOX 404 / ITGC</span><span aria-hidden="true">FIPS 204 (ML-DSA)</span><span aria-hidden="true">FIPS 205 (SLH-DSA)</span><span aria-hidden="true">CBOM</span><span aria-hidden="true">CMMI</span>
+    </div>
+  </div>
+</div>
+
+<!-- STATEMENT -->
+<section class="sec dk statement" id="statement"><div class="in">
+  <p class="kick"><b>/</b> How I work</p>
+  <p class="stm" id="stm">I read standards the way an auditor does: clause by clause. Each one comes back to a single question: what proves the control is working?</p>
+</div></section>
+
+<!-- STORY -->
+<section class="sec lt white" id="story"><div class="in">
+  <p class="kick" data-r><b>/</b> My story</p>
+  <h2>Auditing first, then building the tools.</h2>
+  <p class="lede" data-r>The route in was compliance work inside large companies, then two companies of my own.</p>
+
+  <div class="st" id="st">
+    <div class="st-vis" id="stVis" aria-hidden="true">
+      <p class="sv-k">Career, 2006 to now</p>
+      <div class="sv-main">
+        <p class="sv-year" id="svYear">2006</p>
+        <p class="sv-role" id="svRole">Education: commerce, then an MBA in Finance</p>
+      </div>
+      <div class="sv-bar" id="svBar"><i class="s0 on"></i><i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="g1 gap"></i><i class="s4"></i><i class="g2 gap"></i><i class="s5"></i></div>
+      <div class="sv-ax"><span class="s0">2006</span><span class="s1"></span><span class="s2">2012</span><span class="s3">2016</span><span class="g1"></span><span class="s4">2019</span><span class="g2"></span><span class="s5">2024</span></div>
+      <p class="sv-foot"><span>Chapter <b id="svN">1</b> of <b id="svT">8</b></span><span>Scroll to read</span></p>
+    </div>
+
+    <ol class="st-ch" id="stCh">
+      <li class="chap on" data-seg="0" data-year="2006" data-role="Education: commerce, then an MBA in Finance">
+        <p class="when">2006 to 2012</p><h3>Finance first</h3>
+        <p class="t">A B.Com. in Accounting and Finance at Doctor Ram Manohar Lohia Awadh University (2006 to 2009), then an MBA in Finance at Jamia Hamdard (2010 to 2012).</p>
+        <p class="srcm">Source: LinkedIn education, 20 Aug 2026</p></li>
+      <li class="chap" data-seg="1" data-year="2012" data-role="Product Executive, Shriram Transport Finance">
+        <p class="when">Mar 2012 to Oct 2012</p><h3>Credit analysis and field checks</h3>
+        <p class="t">Product Executive at Shriram Transport Finance: commercial vehicle finance, credit analysis, and field inspection to check that a customer was who they said they were.</p>
+        <p class="srcm">Source: LinkedIn experience, 20 Aug 2026</p></li>
+      <li class="chap" data-seg="2" data-year="2012" data-role="Senior Compliance Analyst, American Express">
+        <p class="when">Oct 2012 to Feb 2016</p><h3>Audit and SOX at American Express</h3>
+        <p class="t">Senior Compliance Analyst: vendor payables and compliance, audits across the EMEA region, and the quarterly SOX 404 attestations for EMEA Accounts Payable.</p>
+        <p class="srcm">Source: LinkedIn experience, 20 Aug 2026</p></li>
+      <li class="chap" data-seg="3" data-year="2016" data-role="Senior Compliance Specialist, JLL at Google India">
+        <p class="when">Mar 2016 to Mar 2019</p><h3>Compliance inside Google India</h3>
+        <p class="t">Senior Compliance Specialist with Jones Lang LaSalle at Google India: SOX 404 and IT general controls, third-party risk and vendor audits.</p>
+        <p class="srcm">Source: LinkedIn experience, 20 Aug 2026</p></li>
+      <li class="chap" data-seg="4" data-year="2019" data-role="CEO, UpSkill Finder">
+        <p class="when">Jul 2019 to Jan 2024</p><h3>Venture: UpSkill Finder</h3>
+        <p class="t">CEO of an EdTech company training professionals in cybersecurity, IT audit, compliance and risk management. My LinkedIn entry puts it at 10,000+ professionals trained.</p>
+        <p class="srcm">Source: LinkedIn experience, 20 Aug 2026</p></li>
+      <li class="chap" data-seg="5" data-year="2024" data-role="CEO and Founder, Purplecop One">
+        <p class="when">Mar 2024 to now</p><h3>Purplecop One</h3>
+        <p class="t">Founder and CEO. I stay close to product, client delivery and go-to-market for the GRC platform.</p>
+        <p class="srcm">Source: LinkedIn experience, 20 Aug 2026</p></li>
+      <li class="chap" data-seg="-1" data-year="27001" data-role="ISO 27001 Lead Auditor">
+        <p class="when">Credential</p><h3>ISO 27001 Lead Auditor</h3>
+        <p class="t">I hold the Lead Auditor qualification, and I read standards the way an auditor does: clause by clause.</p>
+        <p class="srcm">Source: LinkedIn headline, 20 Aug 2026</p></li>
+      <li class="chap" data-seg="5" data-year="Now" data-role="Working in the open">
+        <p class="when">Now</p><h3>Working in the open</h3>
+        <p class="t">A public record of corrections to GRC, AI-security, supply-chain and post-quantum projects, from Google and Microsoft to OWASP and the OSSF. The live ledger is below.</p>
+        <p class="srcm">Source: github.com/tausif-ahmed-guardian</p></li>
+    </ol>
+  </div>
+</div></section>
+
+<!-- WORK -->
+<section class="sec dk" id="work"><div class="in">
+  <p class="kick" data-r><b>/</b> What I work on</p>
+  <h2>Three areas where the evidence matters.</h2>
+  <p class="lede" data-r>Each one comes back to a single question: what proves the control is working?</p>
+  <div class="wl">
+    <article class="wl-row" data-r>
+      <div><h3>Governance, risk and compliance</h3><p>Controls mapped once and tested against many frameworks, with evidence an auditor can sample.</p></div>
+      <ul class="wl-l"><li>ISO 27001</li><li>SOC 2</li><li>GDPR</li><li>DPDP Act</li><li>SOX 404 / ITGC</li><li>CMMI</li></ul>
+    </article>
+    <article class="wl-row" data-r>
+      <div><h3>AI security and governance</h3><p>Turning AI obligations into controls, owners and records, and looking at the risks in LLM and agent systems.</p></div>
+      <ul class="wl-l"><li>ISO/IEC 42001</li><li>NIST AI RMF</li><li>EU AI Act</li><li class="topic">Prompt injection</li><li class="topic">Over-privileged tools</li></ul>
+    </article>
+    <article class="wl-row" data-r>
+      <div><h3>Post-quantum readiness</h3><p>Start with an inventory of where cryptography lives, then plan the migration with owners and dates.</p></div>
+      <ul class="wl-l"><li>FIPS 203 (ML-KEM)</li><li>FIPS 204 (ML-DSA)</li><li>FIPS 205 (SLH-DSA)</li><li>CBOM</li></ul>
+    </article>
+  </div>
+  <p class="srcm work-src" data-r>Purplecop Security: cybersecurity and GRC company founded in 2020, present in the USA, India and Dubai. Per purplecop.com, 12 Nov 2026.</p>
+</div></section>
+
+<!-- PRODUCTS -->
+<section class="sec lt paper" id="products"><div class="in">
+  <p class="kick" data-r><b>/</b> Products</p>
+  <h2>What Purplecop builds.</h2>
+  <p class="lede" data-r>Descriptions are taken from the product sites, read on 12 Nov 2026.</p>
+  <div class="pt" id="pt" data-r>
+    <div class="pt-tabs" id="ptTabs">
+      <p class="pt-g">Platform: Purplecop One</p>
+      <a class="pt-tab" href="#p-grc">Purplecop GRC</a>
+      <a class="pt-tab" href="#p-privacy">Purplecop Privacy</a>
+      <a class="pt-tab" href="#p-aims">Purplecop AIMS</a>
+      <p class="pt-g">AI pentesting</p>
+      <a class="pt-tab asis" href="#p-aipento">aipento</a>
+    </div>
+    <div class="pt-panels">
+      <article class="pt-panel on" id="p-grc">
+        <p class="tagk">Purplecop One / GRC</p><h3>Purplecop GRC</h3>
+        <p class="t">Frameworks, controls, evidence, risk, vendors, audit and awareness, in one product.</p>
+        <p class="eco">Part of Purplecop One: three products in one ecosystem, one for each management system, on one identity, one control library and one evidence store.</p>
+        <a class="ext" href="https://purplecop.com" rel="noopener">purplecop.com <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a>
+        <p class="srcm">Source: purplecop.com, 12 Nov 2026.</p>
+      </article>
+      <article class="pt-panel" id="p-privacy">
+        <p class="tagk">Purplecop One / Privacy</p><h3>Purplecop Privacy</h3>
+        <p class="t">Privacy information management, DPDPA-native for India, with privacy laws from other countries covered too.</p>
+        <p class="eco">Part of Purplecop One: three products in one ecosystem, one for each management system, on one identity, one control library and one evidence store.</p>
+        <a class="ext" href="https://purplecop.com" rel="noopener">purplecop.com <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a>
+        <p class="srcm">Source: purplecop.com, 12 Nov 2026.</p>
+      </article>
+      <article class="pt-panel" id="p-aims">
+        <p class="tagk">Purplecop One / AI management</p><h3>Purplecop AIMS</h3>
+        <p class="t">Model inventory, AI risk, AI controls and the evidence that an AI system is governed.</p>
+        <p class="eco">Part of Purplecop One: three products in one ecosystem, one for each management system, on one identity, one control library and one evidence store.</p>
+        <a class="ext" href="https://purplecop.com" rel="noopener">purplecop.com <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a>
+        <p class="srcm">Source: purplecop.com, 12 Nov 2026.</p>
+      </article>
+      <article class="pt-panel" id="p-aipento">
+        <p class="tagk">AI pentesting</p><h3 class="asis">aipento</h3>
+        <p class="t">An autonomous AI penetration testing platform. It attacks your own staging app the way an AI attacker would, and reports only the weaknesses it can reproduce.</p>
+        <a class="ext" href="https://aipento.com" rel="noopener">aipento.com <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a>
+        <p class="srcm">Source: aipento.com, 12 Nov 2026.</p>
+      </article>
+    </div>
+  </div>
+</div></section>
+
+<!-- GRC PRACTICE LAB -->
+<section class="sec dk lab" id="lab"><div class="in">
+  <p class="kick" data-r><b>/</b> Purplecop &middot; GRC Practice Lab</p>
+  <h2>A free lab where 12,000+ people practise GRC.</h2>
+  <p class="lede" data-r>Purplecop's GRC Practice Lab is a full GRC workspace with real controls, real registers and real audits, where mistakes cost nothing. Free with an account. Built by the Purplecop team, led by co-founder and CPTO John B Joseph.</p>
+  <div class="lab-grid">
+    <div class="lab-stats" data-r>
+      <div class="ls"><b data-count="12000" data-suffix="+">12,000+</b><span>people practising in the lab</span><i>Google Analytics, Nov 2026</i></div>
+      <div class="ls"><b data-count="34">34</b><span>countries they log in from</span><i>Google Analytics, Oct 2026</i></div>
+      <div class="ls"><b data-count="400" data-suffix="+">400+</b><span>controls to practise on</span><i>GRC Practice Lab</i></div>
+      <div class="ls"><b data-count="9">9</b><span>frameworks</span><i>GRC Practice Lab</i></div>
+    </div>
+    <div class="lab-feat" data-r>
+      <ul class="lf">
+        <li><b>11</b><span>guided scenarios that check your own registers, not a quiz</span></li>
+        <li><b>12</b><span>portfolio projects you can export as proof</span></li>
+        <li><b>44</b><span>modules in one workspace</span></li>
+        <li><b>ISO 27001</b><span>Lead Implementer course, inside the lab</span></li>
+      </ul>
+      <a class="btn primary mag" href="https://grclab.purplecop.io/" rel="noopener">Open the GRC Lab <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a>
+    </div>
+  </div>
+  <div class="fw-strip" aria-label="Frameworks in the lab" data-r><span>ISO 27001</span><span>NIST CSF</span><span>CIS</span><span>SOC 2</span><span>PCI DSS</span><span>HIPAA</span><span>COBIT</span><span>GDPR</span></div>
+  <p class="srcm note" data-r>Figures as published on johnbjoseph-cybersec.github.io (read 15 Nov 2026), from the lab's Google Analytics. Lab: grclab.purplecop.io.</p>
+</div></section>
+
+<!-- IN THE OPEN -->
+<section class="sec dk open" id="open"><div class="in">
+  <p class="kick" data-r><b>/</b> In the open</p>
+  <h2>I would rather help fix the standards references than complain about them.</h2>
+  <p class="lede" data-r>Corrections and additions to open-source projects, checked against the primary source. Every entry links to its public thread, and its status is read from that thread, not from me.</p>
+  <div class="board" data-r>
+<!--LEDGER:START-->
+    <div class="score" id="score">
+      <div><b id="scC">22</b><span>contributions</span></div>
+      <div><b id="scM">4</b><span>merged or accepted</span></div>
+      <div><b id="scP">21</b><span>projects</span></div>
+    </div>
+    <p class="lg-head"><span>Ledger</span><span>Merged first, then newest</span></p>
+    <ol class="lg" id="lg">
+      <li class="lg-rail" id="lgRail" aria-hidden="true"></li>
+      <li class="lg-row" data-status="merged" data-project="hashgraph-online/hol-guard">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>hashgraph-online/hol-guard <span>#7763</span></h3>
+          <p class="t">docs(readme): point the pipx link at the current install page</p></div>
+        <div class="lg-meta"><span class="pill">Merged</span><a class="ext" href="https://github.com/hashgraph-online/hol-guard/pull/7763" rel="noopener">PR #7763 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="merged" data-project="stacklok/toolhive">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>stacklok/toolhive <span>#7142</span></h3>
+          <p class="t">Fix dead toolhive-rfcs and chainsaw links in docs</p></div>
+        <div class="lg-meta"><span class="pill">Merged</span><a class="ext" href="https://github.com/stacklok/toolhive/pull/7142" rel="noopener">PR #7142 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="merged" data-project="solongate/agent-security">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>solongate/agent-security <span>#395</span></h3>
+          <p class="t">docs: fix relative links in .github/CONTRIBUTING.md</p></div>
+        <div class="lg-meta"><span class="pill">Merged</span><a class="ext" href="https://github.com/solongate/agent-security/pull/395" rel="noopener">PR #395 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="merged" data-project="msoedov/agentic_security">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>msoedov/agentic_security <span>#383</span></h3>
+          <p class="t">docs(readme): fix dead links to the CI/CD and module docs</p></div>
+        <div class="lg-meta"><span class="pill">Merged</span><a class="ext" href="https://github.com/msoedov/agentic_security/pull/383" rel="noopener">PR #383 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="proposed" data-project="IBM/mcp-context-forge">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>IBM/mcp-context-forge <span>#7544</span></h3>
+          <p class="t">[DOCS]: RFC section citations for DCR update/delete (RFC 7592) and OWS (RFC 7230 3.2.3)</p></div>
+        <div class="lg-meta"><span class="pill">Proposed</span><a class="ext" href="https://github.com/IBM/mcp-context-forge/issues/7544" rel="noopener">Issue #7544 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="microsoft/component-detection">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>microsoft/component-detection <span>#1912</span></h3>
+          <p class="t">Fix broken links in CONTRIBUTING.md and the pnpm contract doc</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/microsoft/component-detection/pull/1912" rel="noopener">PR #1912 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="OWASP/www-community">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>OWASP/www-community <span>#1364</span></h3>
+          <p class="t">Replace dead links with Wayback copies on SQL injection, XPath, brute force and FAQ pages</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/OWASP/www-community/pull/1364" rel="noopener">PR #1364 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="OWASP/www-community">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>OWASP/www-community <span>#1363</span></h3>
+          <p class="t">Replace dead links with Wayback copies on EL Injection and Unrestricted File Upload pages</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/OWASP/www-community/pull/1363" rel="noopener">PR #1363 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="Agent-Threat-Rule/agent-threat-rules">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>Agent-Threat-Rule/agent-threat-rules <span>#851</span></h3>
+          <p class="t">docs(owasp-pr): fix dead Snyk ToxicSkills and Aikido slopsquatting links</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/Agent-Threat-Rule/agent-threat-rules/pull/851" rel="noopener">PR #851 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="Tencent/AI-Infra-Guard">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>Tencent/AI-Infra-Guard <span>#764</span></h3>
+          <p class="t">docs(pikit): fix USENIX Security 2024 paper link</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/Tencent/AI-Infra-Guard/pull/764" rel="noopener">PR #764 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="google/cybernetic-agent-governance-engine">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>google/cybernetic-agent-governance-engine <span>#747</span></h3>
+          <p class="t">docs(compliance): correct NIST AI 600-1 section numbers</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/google/cybernetic-agent-governance-engine/pull/747" rel="noopener">PR #747 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="anchore/grant">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>anchore/grant <span>#637</span></h3>
+          <p class="t">docs: fix dead architecture docs link in CONTRIBUTING.md</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/anchore/grant/pull/637" rel="noopener">PR #637 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="GoogleCloudPlatform/k8s-aibom">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>GoogleCloudPlatform/k8s-aibom <span>#387</span></h3>
+          <p class="t">docs: correct EU AI Act Article 50 scope and retention example</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/GoogleCloudPlatform/k8s-aibom/pull/387" rel="noopener">PR #387 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="Avarok-Cybersecurity/Citadel-Protocol">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>Avarok-Cybersecurity/Citadel-Protocol <span>#375</span></h3>
+          <p class="t">docs(wire): correct RFC 8656 section references in TURN comments</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/Avarok-Cybersecurity/Citadel-Protocol/pull/375" rel="noopener">PR #375 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="AGGIB/Stroq">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>AGGIB/Stroq <span>#325</span></h3>
+          <p class="t">docs(cli): point the tool-contract link at mcp-tool-contracts.md</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/AGGIB/Stroq/pull/325" rel="noopener">PR #325 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="step-security/dev-machine-guard">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>step-security/dev-machine-guard <span>#303</span></h3>
+          <p class="t">docs: fix broken relative links in AGENTS.md and SCAN_COVERAGE.md</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/step-security/dev-machine-guard/pull/303" rel="noopener">PR #303 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="alexgreensh/repo-forensics">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>alexgreensh/repo-forensics <span>#91</span></h3>
+          <p class="t">docs: fix dead Trend Micro link in RESEARCH-REFERENCES.md</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/alexgreensh/repo-forensics/pull/91" rel="noopener">PR #91 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="IBM/ai-security-baseline">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>IBM/ai-security-baseline <span>#46</span></h3>
+          <p class="t">docs(FAQ): NIST RMF should read NIST AI RMF</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/IBM/ai-security-baseline/pull/46" rel="noopener">PR #46 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="ossf/python-secure-coding-guide">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">14 Nov 2026</p>
+        <div><h3>ossf/python-secure-coding-guide <span>#31</span></h3>
+          <p class="t">Fix CWE-682 and CWE-134 titles and the CWE-595 link in Related Guidelines</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/ossf/python-secure-coding-guide/pull/31" rel="noopener">PR #31 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="proposed" data-project="NVIDIA/garak">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">13 Nov 2026</p>
+        <div><h3>NVIDIA/garak <span>#2466</span></h3>
+          <p class="t">FAQ.md cites CWE-1426 as the prompt injection weakness; prompt injection is CWE-1427</p></div>
+        <div class="lg-meta"><span class="pill">Proposed</span><a class="ext" href="https://github.com/NVIDIA/garak/issues/2466" rel="noopener">Issue #2466 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="proposed" data-project="ruvnet/QuDAG">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">12 Nov 2026</p>
+        <div><h3>ruvnet/QuDAG <span>#44</span></h3>
+          <p class="t">Docs say ML-KEM-768 is &quot;equivalent to AES-256&quot;; NIST security category 3 corresponds to AES-192</p></div>
+        <div class="lg-meta"><span class="pill">Proposed</span><a class="ext" href="https://github.com/ruvnet/QuDAG/issues/44" rel="noopener">Issue #44 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="proposed" data-project="OrchIntel/ioa-core">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">12 Nov 2026</p>
+        <div><h3>OrchIntel/ioa-core <span>#2</span></h3>
+          <p class="t">EU AI Act penalty figures in ai_act_classifier.py do not match Article 99</p></div>
+        <div class="lg-meta"><span class="pill">Proposed</span><a class="ext" href="https://github.com/OrchIntel/ioa-core/issues/2" rel="noopener">Issue #2 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+    </ol>
+<!--LEDGER:END-->
+    <p class="ledger">Every public issue and pull request I have opened in someone else's repository, read from GitHub and rebuilt every two hours. Merged comes only from GitHub's own merged flag; closed-unmerged items are left out.</p>
+  </div>
+  <p class="srcm note" data-r><!--ASOF:START-->Ledger as of 15 Nov 2026, read from GitHub (account tausif-ahmed-guardian) and rebuilt every two hours.<!--ASOF:END--></p>
+</div></section>
+
+<!-- WRITING -->
+<section class="sec lt white" id="writing"><div class="in">
+  <p class="kick" data-r><b>/</b> Writing</p>
+  <h2>Recent posts on LinkedIn.</h2>
+  <p class="lede" data-r>Advisories and incidents, with the primary source in the first comment.</p>
+  <div class="wr">
+    <article class="wr-row" data-r><p class="when">12 Nov 2026</p>
+      <div><h3>Your AI vendor has vendors too.</h3><p class="t">Notion says a security incident at Fireworks AI, an AI infrastructure provider it used, exposed Notion AI chat transcripts from fewer than 1% of its workspaces.</p></div>
+      <a class="ext" href="https://www.linkedin.com/in/tausif-ahmed-b5b8962a/recent-activity/all/" rel="noopener">On my LinkedIn <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></article>
+    <article class="wr-row" data-r><p class="when">2 Nov 2026</p>
+      <div><h3>GitLab CVE-2026-97229 added to CISA KEV</h3><p class="t">CISA added CVE-2026-97229, in GitLab Community and Enterprise Edition, to its Known Exploited Vulnerabilities catalog on 29 Oct, based on evidence of active exploitation.</p></div>
+      <a class="ext" href="https://www.linkedin.com/feed/update/urn:li:activity:7523014140194508802/" rel="noopener">Read the post <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></article>
+    <article class="wr-row" data-r><p class="when">2 Nov 2026</p>
+      <div><h3>eMudhra intermediate CA weak keys</h3><p class="t">CERT-In advisory CIAD-2026-0050 (21 Oct) covers eight eMudhra intermediate CA certificates. Their private keys were generated with too little randomness, so they could be worked out from the public keys.</p></div>
+      <a class="ext" href="https://www.linkedin.com/feed/update/urn:li:activity:7523014822159015937/" rel="noopener">Read the post <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></article>
+    <article class="wr-row" data-r><p class="when">1 Nov 2026</p>
+      <div><h3>PHP2Shell critical PHP RCE (CERT-In)</h3><p class="t">CERT-In has issued a critical advisory for MSMEs, CIAD-2026-0052 (22 Oct), on two PHP flaws it calls PHP2Shell (CVE-2026-109618 and CVE-2026-109619).</p></div>
+      <a class="ext" href="https://www.linkedin.com/feed/update/urn:li:activity:7522560105612029952/" rel="noopener">Read the post <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></article>
+  </div>
+</div></section>
+
+<!-- VIDEOS -->
+<section class="sec dk2" id="videos"><div class="in">
+  <p class="kick" data-r><b>/</b> Videos</p>
+  <h2>Six videos, ready to publish.</h2>
+  <p class="pill vd-note" data-r>Publishing on YouTube from 16 Nov</p>
+  <div class="vds">
+    <figure class="vd" data-r><img src="assets/vsl/soc2.jpg" alt="Video thumbnail: Deal waiting on SOC 2?" width="960" height="540" loading="lazy"><figcaption><p class="tag">SOC 2 program</p><h3>SOC 2 Report for Enterprise Deals: Readiness, Audit and Pentest</h3></figcaption></figure>
+    <figure class="vd" data-r><img src="assets/vsl/aipento.jpg" alt="Video thumbnail: No proof, no finding" width="960" height="540" loading="lazy"><figcaption><p class="tag">aipento AI pentest</p><h3>AI Penetration Testing for Web Apps, APIs and LLM Features</h3></figcaption></figure>
+    <figure class="vd" data-r><img src="assets/vsl/iso27001.jpg" alt="Video thumbnail: Can you show it working?" width="960" height="540" loading="lazy"><figcaption><p class="tag">ISO 27001 program</p><h3>ISO 27001 Certification Readiness: Annex A, SoA, Risk and Audit</h3></figcaption></figure>
+    <figure class="vd" data-r><img src="assets/vsl/saudi-pdpl.jpg" alt="Video thumbnail: Saudi PDPL, 72-hour breach clock" width="960" height="540" loading="lazy"><figcaption><p class="tag">Saudi PDPL</p><h3>Saudi PDPL Compliance: Rights Requests, Breach Clock, Records</h3></figcaption></figure>
+    <figure class="vd" data-r><img src="assets/vsl/gdpr.jpg" alt="Video thumbnail: Proof is the work" width="960" height="540" loading="lazy"><figcaption><p class="tag">GDPR: EU + UK</p><h3>GDPR for the EU and UK: One Program for Both Laws</h3></figcaption></figure>
+    <figure class="vd" data-r><img src="assets/vsl/privacy.jpg" alt="Video thumbnail: One breach, many clocks" width="960" height="540" loading="lazy"><figcaption><p class="tag">Purplecop Privacy</p><h3>Multi-Country Privacy Compliance: Many Laws, One Set of Controls</h3></figcaption></figure>
+  </div>
+</div></section>
+
+<!-- NEWSLETTER -->
+<section class="sec lt paper" id="editions"><div class="in two">
+  <div>
+    <p class="kick" data-r><b>/</b> Newsletter</p>
+    <h2 data-nl-name>Guardian of Cyberspace</h2>
+    <p class="lede" data-r>A short read on GRC, AI governance, AI security, privacy and post-quantum readiness, with one story explained properly. The name is a working title and may change.</p>
+    <a class="btn primary" data-r href="https://www.linkedin.com/in/tausif-ahmed-b5b8962a/" rel="noopener">Follow on LinkedIn <svg class="arr" aria-hidden="true"><use href="#i-e"/></svg></a>
+    <p class="srcm" data-r>Handle: tausif-ahmed-guardian</p>
+  </div>
+  <aside class="ed" data-r>
+    <h3>Editions</h3>
+    <p><span data-nl-name>Guardian of Cyberspace</span>: first edition coming.</p>
+    <p class="empty">No editions published yet. Each edition will be listed here with its date and a link to the published post.</p>
+  </aside>
+</div></section>
+
+<!-- LINKS -->
+<section class="sec dk" id="links"><div class="in">
+  <p class="kick" data-r><b>/</b> Links</p>
+  <h2>Find me, or check my work.</h2>
+  <p class="lede" data-r>Everything on this page can be checked at these sources.</p>
+  <div class="lks">
+    <a class="lk" data-r href="https://www.linkedin.com/in/tausif-ahmed-b5b8962a/" rel="noopener"><b>LinkedIn</b><span>Profile, posts and editions</span><svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a>
+    <a class="lk" data-r href="https://github.com/tausif-ahmed-guardian" rel="noopener"><b>GitHub</b><span>tausif-ahmed-guardian</span><svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a>
+    <a class="lk" data-r href="https://purplecop.com" rel="noopener"><b>Purplecop Security</b><span>purplecop.com</span><svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <div class="in">
+    <div class="ft">
+      <div class="about"><a class="wm" href="#top" aria-label="Tausif Ahmed, back to top">Tausif Ahmed</a>Founder &amp; CEO, Purplecop Security. Compliance has to stand up in front of an auditor.</div>
+      <div><h4>On this page</h4><ul><li><a href="#story">Story</a></li><li><a href="#work">Work</a></li><li><a href="#products">Products</a></li><li><a href="#lab">GRC Lab</a></li><li><a href="#open">In the open</a></li><li><a href="#writing">Writing</a></li><li><a href="#videos">Videos</a></li><li><a href="#editions">Newsletter</a></li></ul></div>
+      <div><h4>Elsewhere</h4><ul><li><a href="https://www.linkedin.com/in/tausif-ahmed-b5b8962a/" rel="noopener">LinkedIn</a></li><li><a href="https://github.com/tausif-ahmed-guardian" rel="noopener">GitHub</a></li><li><a href="https://purplecop.com" rel="noopener">purplecop.com</a></li><li><a href="https://aipento.com" rel="noopener">aipento.com</a></li></ul></div>
+    </div>
+    <p class="sig" aria-hidden="true">Tausif Ahmed</p>
+    <p class="ft-b"><span>Tausif Ahmed, Founder &amp; CEO, Purplecop Security.</span><span>Every figure on this page names its source.</span></p>
+  </div>
+</footer>
+
+<script>
+/* One place to rename the newsletter. Change this string; every [data-nl-name] updates. */
+var NEWSLETTER_NAME = "Guardian of Cyberspace";
+document.querySelectorAll("[data-nl-name]").forEach(function (e) { e.textContent = NEWSLETTER_NAME; });
+</script>
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script>
+/* Behaviour and motion. GSAP 3.12.5 + ScrollTrigger 3.12.5, vendored in assets/vendor.
+   Part 1 always runs: sticky bar, scoreboard counts read from the ledger, product tabs.
+   Part 2 runs only when GSAP loaded and the visitor has not asked for reduced motion.
+   Every element is visible in the markup; nothing depends on JS to be readable. */
+(function () {
+  "use strict";
+  var d = document;
+  function q(sel, ctx) { return Array.prototype.slice.call((ctx || d).querySelectorAll(sel)); }
+  function byId(id) { return d.getElementById(id); }
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var motion = !reduce && !!window.gsap && !!window.ScrollTrigger;
+
+  /* sticky bar */
+  var bar = byId("bar"), hero = byId("top");
+  if (bar && hero && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      bar.classList.toggle("on", !entries[0].isIntersecting);
+    }, { rootMargin: "-80px 0px 0px 0px" }).observe(hero);
+  }
+
+  /* scoreboard: counted from the ledger rows, so the numbers cannot drift from the list */
+  var rows = q("#lg .lg-row"), projects = {}, merged = 0;
+  rows.forEach(function (r) {
+    projects[r.getAttribute("data-project")] = 1;
+    if (/^(merged|accepted)$/.test(r.getAttribute("data-status"))) { merged += 1; }
+  });
+  var score = [[byId("scC"), rows.length], [byId("scM"), merged], [byId("scP"), Object.keys(projects).length]];
+  score.forEach(function (s) { if (s[0]) { s[0].textContent = String(s[1]); } });
+
+  /* product tabs: without JS every panel is shown, stacked */
+  var pt = byId("pt"), tabs = q(".pt-tab", pt), panels = q(".pt-panel", pt);
+  function selectTab(tab, animate) {
+    var id = tab.getAttribute("href").slice(1);
+    tabs.forEach(function (t) { t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
+    panels.forEach(function (p) { p.classList.toggle("on", p.id === id); });
+    if (animate && motion) { gsap.fromTo(byId(id), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out", clearProps: "opacity,transform" }); }
+  }
+  if (pt && tabs.length) {
+    pt.classList.add("tabs-on");
+    byId("ptTabs").setAttribute("role", "tablist");
+    tabs.forEach(function (t) {
+      t.setAttribute("role", "tab");
+      t.setAttribute("aria-controls", t.getAttribute("href").slice(1));
+      t.addEventListener("click", function (e) { e.preventDefault(); selectTab(t, true); });
+    });
+    var fromHash = tabs.filter(function (t) { return t.getAttribute("href") === location.hash; })[0];
+    selectTab(fromHash || tabs[0], false);
+  }
+
+  /* story: the pinned panel follows the chapter being read */
+  var st = byId("st"), vis = byId("stVis"), chaps = q("#stCh .chap"), segs = q("#svBar i");
+  var svYear = byId("svYear"), svRole = byId("svRole"), svN = byId("svN"), svT = byId("svT");
+  if (svT) { svT.textContent = String(chaps.length); }
+  var current = -1;
+  function setChapter(i) {
+    if (i === current || !chaps[i]) { return; }
+    current = i;
+    var c = chaps[i], seg = c.getAttribute("data-seg");
+    chaps.forEach(function (x, k) { x.classList.toggle("on", k === i); });
+    segs.forEach(function (s) {
+      s.classList.toggle("on", s.classList.contains("s" + seg));
+      s.classList.toggle("all", seg === "-1" && !s.classList.contains("gap"));
+    });
+    svYear.textContent = c.getAttribute("data-year");
+    svRole.textContent = c.getAttribute("data-role");
+    svN.textContent = String(i + 1);
+    if (motion) { gsap.fromTo([svYear, svRole], { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out", overwrite: true }); }
+  }
+
+  if (!motion) { return; }
+
+  var touched = [];
+  function splitWords(el) {
+    var words = el.textContent.replace(/\s+/g, " ").trim().split(" ");
+    el.setAttribute("aria-label", words.join(" "));
+    el.textContent = "";
+    return words.map(function (w, i) {
+      var s = d.createElement("span");
+      s.className = "w"; s.setAttribute("aria-hidden", "true"); s.textContent = w;
+      el.appendChild(s);
+      if (i < words.length - 1) { el.appendChild(d.createTextNode(" ")); }
+      return s;
+    });
+  }
+  try {
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* reading progress */
+    gsap.to("#prog", { scaleX: 1, ease: "none", scrollTrigger: { start: 0, end: "max", scrub: 0.3 } });
+
+    /* hero entrance: one short fade with a slight rise */
+    var heroText = q(".hero .top, .hero .rise"), photo = [];
+    touched = touched.concat(heroText, photo);
+    gsap.from(photo, { opacity: 0, duration: 0.8, ease: "power1.out" });
+    gsap.from(heroText, { opacity: 0, y: 10, duration: 0.6, stagger: 0.06, ease: "power2.out", delay: 0.1 });
+
+    /* statement: the sentence fills in as it is read */
+    var stmWords = splitWords(byId("stm"));
+    touched = touched.concat(stmWords);
+    gsap.fromTo(stmWords, { opacity: 0.18 }, { opacity: 1, ease: "none", stagger: 0.12,
+      scrollTrigger: { trigger: "#stm", start: "top 80%", end: "bottom 50%", scrub: true } });
+
+    /* headings: staggered word reveal */
+    q("main h2").forEach(function (h) {
+      var w = splitWords(h);
+      touched = touched.concat(w);
+      gsap.from(w, { opacity: 0, y: 14, duration: 0.5, ease: "power2.out", stagger: 0.035,
+        scrollTrigger: { trigger: h, start: "top 90%", once: true } });
+    });
+
+    /* section reveals */
+    var reveals = q("[data-r]");
+    touched = touched.concat(reveals);
+    gsap.set(reveals, { opacity: 0, y: 12 });
+    ScrollTrigger.batch(reveals, { start: "top 92%", once: true, onEnter: function (batch) {
+      gsap.to(batch, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", stagger: 0.05, overwrite: true });
+    } });
+
+    /* story: pin the timeline panel while the chapters scroll past it */
+    if (st && vis && chaps.length) {
+      st.classList.add("live");
+      var mm = gsap.matchMedia();
+      mm.add({ wide: "(min-width: 900px)", narrow: "(max-width: 899px)" }, function (ctx) {
+        var off = ctx.conditions.wide ? 96 : 60;
+        ScrollTrigger.create({ trigger: vis, start: "top " + off, endTrigger: "#stCh",
+          end: function () { return "bottom " + (off + vis.offsetHeight + (ctx.conditions.wide ? 0 : 24)); },
+          pin: vis, pinSpacing: false, invalidateOnRefresh: true });
+      });
+      chaps.forEach(function (c, i) {
+        ScrollTrigger.create({ trigger: c, start: "top 58%", end: "bottom 58%",
+          onEnter: function () { setChapter(i); }, onEnterBack: function () { setChapter(i); } });
+      });
+    }
+
+    /* ledger: the rail draws, the dots land, the scoreboard counts up */
+    if (rows.length) {
+      var rail = byId("lgRail"), dots = q("#lg .lg-dot");
+      touched = touched.concat([rail], dots);
+      gsap.fromTo(rail, { scaleY: 0 }, { scaleY: 1, ease: "none", scrollTrigger: { trigger: "#lg", start: "top 82%", end: "bottom 62%", scrub: true } });
+      gsap.from(dots, { scale: 0, duration: 0.45, ease: "back.out(2)", stagger: 0.18, scrollTrigger: { trigger: "#lg", start: "top 78%", once: true } });
+      score.forEach(function (s) {
+        var el = s[0], target = s[1], o = { v: 0 };
+        if (!el || !target) { return; }
+        el.textContent = "0";
+        ScrollTrigger.create({ trigger: "#score", start: "top 88%", once: true, onEnter: function () {
+          gsap.to(o, { v: target, duration: 0.9, ease: "power1.out",
+            onUpdate: function () { el.textContent = String(Math.round(o.v)); },
+            onComplete: function () { el.textContent = String(target); } });
+        } });
+      });
+    }
+
+    window.addEventListener("load", function () { ScrollTrigger.refresh(); });
+  } catch (err) {
+    /* never leave content hidden if the motion layer fails */
+    try {
+      ScrollTrigger.getAll().forEach(function (t) { t.kill(true); });
+      gsap.killTweensOf(touched); gsap.set(touched, { clearProps: "all" });
+    } catch (e2) { /* no-op */ }
+    if (st) { st.classList.remove("live"); }
+    score.forEach(function (s) { if (s[0]) { s[0].textContent = String(s[1]); } });
+    touched.forEach(function (el) { if (el && el.style) { el.style.opacity = ""; el.style.transform = ""; } });
+  }
+})();
+</script>
+<script>
+/* Motion layer (2026-11-15): hero dot field, letter reveal on the name, portrait drift,
+   magnetic buttons, ledger spotlight and lab count-up. Reduced motion: field drawn once, still;
+   everything else stays in its final, readable state. Any failure leaves content visible. */
+(function () {
+  "use strict";
+  var d = document, w = window;
+  var reduce = w.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var G = w.gsap, ST = w.ScrollTrigger, motion = !reduce && !!G && !!ST;
+
+  /* 1. hero dot field */
+  var cv = d.getElementById("field");
+  if (cv && cv.getContext) {
+    var cx = cv.getContext("2d"), host = cv.parentNode, W = 0, H = 0, dpr = 1, pts = [], mx = -999, my = -999, run = true, t0 = 0;
+    var size = function () {
+      dpr = Math.min(w.devicePixelRatio || 1, 2);
+      W = host.clientWidth; H = host.clientHeight;
+      cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      pts = []; var gap = W < 600 ? 26 : 30;
+      for (var y = gap / 2; y < H; y += gap) { for (var x = gap / 2; x < W; x += gap) { pts.push([x, y]); } }
+    };
+    var draw = function (t) {
+      cx.clearRect(0, 0, W, H);
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i], x = p[0], y = p[1];
+        var wave = Math.sin(x * 0.012 + t * 0.0006) * Math.cos(y * 0.014 - t * 0.0005);
+        var dx = x - mx, dy = y - my, dist = Math.sqrt(dx * dx + dy * dy), near = Math.max(0, 1 - dist / 170);
+        var ox = near ? dx / (dist || 1) * near * 10 : 0, oy = near ? dy / (dist || 1) * near * 10 : 0;
+        var fade = Math.min(1, (y / H) * 1.6) * (0.55 + 0.45 * (x / W));
+        var a = (0.10 + 0.16 * (wave + 1) / 2) * fade + near * 0.6;
+        var r = 1 + 0.6 * (wave + 1) / 2 + near * 1.4;
+        cx.fillStyle = near > 0.05 ? "rgba(255,17,55," + a.toFixed(3) + ")" : "rgba(244,244,248," + a.toFixed(3) + ")";
+        cx.beginPath(); cx.arc(x + ox, y + oy + wave * 3, r, 0, 6.2832); cx.fill();
+      }
+    };
+    var loop = function (t) { if (!run) { return; } draw(t - t0); w.requestAnimationFrame(loop); };
+    size();
+    if (reduce) { draw(0); } else {
+      host.addEventListener("pointermove", function (e) { var r = host.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top; });
+      host.addEventListener("pointerleave", function () { mx = my = -999; });
+      if ("IntersectionObserver" in w) {
+        new IntersectionObserver(function (es) { var v = es[0].isIntersecting; if (v && !run) { run = true; w.requestAnimationFrame(loop); } else if (!v) { run = false; } }).observe(host);
+      }
+      w.requestAnimationFrame(function (t) { t0 = t; loop(t); });
+    }
+    var rt; w.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { size(); if (reduce) { draw(0); } }, 150); });
+  }
+
+  /* 2. lab numbers: final values are in the markup; count up only with motion */
+  var nums = Array.prototype.slice.call(d.querySelectorAll("[data-count]"));
+  if (!motion) { return; }
+  try {
+    /* name: letters rise into place */
+    var name = d.querySelector(".name");
+    if (name) {
+      Array.prototype.slice.call(name.querySelectorAll("span")).forEach(function (line) {
+        var txt = line.textContent; line.textContent = "";
+        var wrap = d.createElement("span"); wrap.className = "cw"; wrap.setAttribute("aria-hidden", "true");
+        txt.split("").forEach(function (c) { var s = d.createElement("span"); s.className = "ch"; s.textContent = c; wrap.appendChild(s); });
+        line.appendChild(wrap);
+      });
+      G.from(name.querySelectorAll(".ch"), { yPercent: 115, duration: 0.9, ease: "power4.out", stagger: 0.035, delay: 0.15 });
+    }
+    /* portrait: settle in, then drift slower than the page */
+    var img = d.querySelector(".right img");
+    if (img) {
+      G.fromTo(img, { scale: 1.08, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.4, ease: "power2.out" });
+      G.to(img, { yPercent: 8, ease: "none", scrollTrigger: { trigger: "#top", start: "top top", end: "bottom top", scrub: true } });
+    }
+    /* magnetic buttons */
+    Array.prototype.slice.call(d.querySelectorAll(".mag")).forEach(function (b) {
+      b.addEventListener("pointermove", function (e) { var r = b.getBoundingClientRect();
+        G.to(b, { x: (e.clientX - r.left - r.width / 2) * 0.25, y: (e.clientY - r.top - r.height / 2) * 0.35, duration: 0.3, ease: "power2.out" }); });
+      b.addEventListener("pointerleave", function () { G.to(b, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1,0.4)" }); });
+    });
+    /* ledger spotlight */
+    var board = d.querySelector(".board");
+    if (board) { board.addEventListener("pointermove", function (e) { var r = board.getBoundingClientRect();
+      board.style.setProperty("--mx", (e.clientX - r.left) + "px"); board.style.setProperty("--my", (e.clientY - r.top) + "px"); }); }
+    /* lab count-up */
+    nums.forEach(function (el) {
+      var target = +el.getAttribute("data-count"), suf = el.getAttribute("data-suffix") || "", o = { v: 0 };
+      var fmt = function (v) { return Math.round(v).toLocaleString("en-US") + suf; };
+      ST.create({ trigger: el, start: "top 90%", once: true, onEnter: function () {
+        G.to(o, { v: target, duration: 1.4, ease: "power2.out", onUpdate: function () { el.textContent = fmt(o.v); }, onComplete: function () { el.textContent = fmt(target); } });
+      } });
+    });
+  } catch (err) {
+    try { G.set(".name .ch, .right img, .mag", { clearProps: "all" }); } catch (e2) { /* no-op */ }
+    nums.forEach(function (el) { el.textContent = (+el.getAttribute("data-count")).toLocaleString("en-US") + (el.getAttribute("data-suffix") || ""); });
+  }
+})();
+</script>
+</body>
+</html>

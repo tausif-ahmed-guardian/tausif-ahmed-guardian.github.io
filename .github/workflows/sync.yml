@@ -1,0 +1,44 @@
+name: Sync site
+
+# Rebuilds index.html every 2 hours from the same sources as the profile README
+# (profile.json and GitHub search, via the profile repo's own code). Commits only when the page changed.
+on:
+  schedule:
+    - cron: "41 */2 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["tools/build_site.py", ".github/workflows/sync.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-site
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: tausif-ahmed-guardian/tausif-ahmed-guardian
+          path: _profile
+      - name: Build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/build_site.py --profile-repo _profile
+      - name: Commit if changed
+        run: |
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "site unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898900+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Site: sync upstream work from GitHub"
+          git push

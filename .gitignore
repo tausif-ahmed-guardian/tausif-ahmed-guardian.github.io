@@ -1,0 +1,4 @@
+screenshots/
+_profile/
+__pycache__/
+.DS_Store
