@@ -621,13 +621,20 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);color:var(--mut
   <div class="board" data-r>
 <!--LEDGER:START-->
     <div class="score" id="score">
-      <div><b id="scC">39</b><span>contributions</span></div>
-      <div><b id="scM">18</b><span>merged or accepted</span></div>
-      <div><b id="scP">36</b><span>projects</span></div>
+      <div><b id="scC">42</b><span>contributions</span></div>
+      <div><b id="scM">19</b><span>merged or accepted</span></div>
+      <div><b id="scP">39</b><span>projects</span></div>
     </div>
     <p class="lg-head"><span>Ledger</span><span>Merged first, then newest</span></p>
     <ol class="lg" id="lg">
       <li class="lg-rail" id="lgRail" aria-hidden="true"></li>
+      <li class="lg-row" data-status="merged" data-project="OWASP/wstg">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">23 Nov 2026</p>
+        <div><h3>OWASP/wstg <span>#1755</span></h3>
+          <p class="t">Update CWE names in WSTG-CRYP-04 and replace deprecated CWE-613 in API authentication testing</p></div>
+        <div class="lg-meta"><span class="pill">Merged</span><a class="ext" href="https://github.com/OWASP/wstg/pull/1755" rel="noopener">PR #1755 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
       <li class="lg-row" data-status="merged" data-project="OWASP/ASVS">
         <span class="lg-dot" aria-hidden="true"></span>
         <p class="lg-date">17 Nov 2026</p>
@@ -753,6 +760,20 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);color:var(--mut
         <div><h3>ossf/python-secure-coding-guide <span>#31</span></h3>
           <p class="t">Fix CWE-682 and CWE-134 titles and the CWE-595 link in Related Guidelines</p></div>
         <div class="lg-meta"><span class="pill">Merged</span><a class="ext" href="https://github.com/ossf/python-secure-coding-guide/pull/31" rel="noopener">PR #31 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="proposed" data-project="CycloneDX/specification">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">23 Nov 2026</p>
+        <div><h3>CycloneDX/specification <span>#1249</span></h3>
+          <p class="t">[Defect]: cryptography-defs.json cites RFC 5996 (obsoleted by RFC 7296) and only FIPS 186-4 for ECDSA</p></div>
+        <div class="lg-meta"><span class="pill">Proposed</span><a class="ext" href="https://github.com/CycloneDX/specification/issues/1249" rel="noopener">Issue #1249 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="proposed" data-project="OWASP/Top10">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">23 Nov 2026</p>
+        <div><h3>OWASP/Top10 <span>#986</span></h3>
+          <p class="t">2025 CWE lists cite three CWEs that MITRE now marks Deprecated (377, 391, 613)</p></div>
+        <div class="lg-meta"><span class="pill">Proposed</span><a class="ext" href="https://github.com/OWASP/Top10/issues/986" rel="noopener">Issue #986 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
       </li>
       <li class="lg-row" data-status="open" data-project="cisagov/ScubaGoggles">
         <span class="lg-dot" aria-hidden="true"></span>
@@ -905,7 +926,7 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);color:var(--mut
 <!--LEDGER:END-->
     <p class="ledger">Every public issue and pull request I have opened in someone else's repository, read from GitHub and rebuilt every two hours. Merged comes only from GitHub's own merged flag; closed-unmerged items are left out.</p>
   </div>
-  <p class="srcm note" data-r><!--ASOF:START-->Ledger as of 21 Nov 2026, read from GitHub (account tausif-ahmed-guardian) and rebuilt every two hours.<!--ASOF:END--></p>
+  <p class="srcm note" data-r><!--ASOF:START-->Ledger as of 23 Nov 2026, read from GitHub (account tausif-ahmed-guardian) and rebuilt every two hours.<!--ASOF:END--></p>
 </div></section>
 
 <!-- WRITING -->
