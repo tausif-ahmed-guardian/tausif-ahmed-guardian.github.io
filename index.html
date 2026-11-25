@@ -621,13 +621,20 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);color:var(--mut
   <div class="board" data-r>
 <!--LEDGER:START-->
     <div class="score" id="score">
-      <div><b id="scC">46</b><span>contributions</span></div>
-      <div><b id="scM">19</b><span>merged or accepted</span></div>
-      <div><b id="scP">41</b><span>projects</span></div>
+      <div><b id="scC">49</b><span>contributions</span></div>
+      <div><b id="scM">20</b><span>merged or accepted</span></div>
+      <div><b id="scP">42</b><span>projects</span></div>
     </div>
     <p class="lg-head"><span>Ledger</span><span>Merged first, then newest</span></p>
     <ol class="lg" id="lg">
       <li class="lg-rail" id="lgRail" aria-hidden="true"></li>
+      <li class="lg-row" data-status="merged" data-project="OWASP/CheatSheetSeries">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">24 Nov 2026</p>
+        <div><h3>OWASP/CheatSheetSeries <span>#3041</span></h3>
+          <p class="t">Fix two dead Apollo blog links in the GraphQL cheat sheet</p></div>
+        <div class="lg-meta"><span class="pill">Merged</span><a class="ext" href="https://github.com/OWASP/CheatSheetSeries/pull/3041" rel="noopener">PR #3041 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
       <li class="lg-row" data-status="merged" data-project="OWASP/wstg">
         <span class="lg-dot" aria-hidden="true"></span>
         <p class="lg-date">23 Nov 2026</p>
@@ -761,6 +768,27 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);color:var(--mut
           <p class="t">Fix CWE-682 and CWE-134 titles and the CWE-595 link in Related Guidelines</p></div>
         <div class="lg-meta"><span class="pill">Merged</span><a class="ext" href="https://github.com/ossf/python-secure-coding-guide/pull/31" rel="noopener">PR #31 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
       </li>
+      <li class="lg-row" data-status="proposed" data-project="ossf/best-practices-badge">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">25 Nov 2026</p>
+        <div><h3>ossf/best-practices-badge <span>#3145</span></h3>
+          <p class="t">Assurance case cites superseded NIST SP 800-63B-3; 800-63B-4 sec 3.1.1.2 requires 15 characters for single-factor passwords</p></div>
+        <div class="lg-meta"><span class="pill">Proposed</span><a class="ext" href="https://github.com/ossf/best-practices-badge/issues/3145" rel="noopener">Issue #3145 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="OWASP/CheatSheetSeries">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">25 Nov 2026</p>
+        <div><h3>OWASP/CheatSheetSeries <span>#3044</span></h3>
+          <p class="t">Security Questions: cite SP 800-63B-4 sec 3.1.1.2 instead of the superseded 800-63-3 text</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/OWASP/CheatSheetSeries/pull/3044" rel="noopener">PR #3044 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
+      <li class="lg-row" data-status="open" data-project="OWASP/CheatSheetSeries">
+        <span class="lg-dot" aria-hidden="true"></span>
+        <p class="lg-date">25 Nov 2026</p>
+        <div><h3>OWASP/CheatSheetSeries <span>#3043</span></h3>
+          <p class="t">Session Management: cite RFC 6265 for cookies and RFC 3986 for URLs</p></div>
+        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/OWASP/CheatSheetSeries/pull/3043" rel="noopener">PR #3043 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
+      </li>
       <li class="lg-row" data-status="open" data-project="kubernetes/website">
         <span class="lg-dot" aria-hidden="true"></span>
         <p class="lg-date">24 Nov 2026</p>
@@ -774,13 +802,6 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);color:var(--mut
         <div><h3>OWASP/ASVS <span>#3449</span></h3>
           <p class="t">v5.0.0 4.2.1 cites RFC 2616, which is obsolete; RFC 9112 section 6.3 words the rule differently</p></div>
         <div class="lg-meta"><span class="pill">Proposed</span><a class="ext" href="https://github.com/OWASP/ASVS/issues/3449" rel="noopener">Issue #3449 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
-      </li>
-      <li class="lg-row" data-status="open" data-project="OWASP/CheatSheetSeries">
-        <span class="lg-dot" aria-hidden="true"></span>
-        <p class="lg-date">24 Nov 2026</p>
-        <div><h3>OWASP/CheatSheetSeries <span>#3041</span></h3>
-          <p class="t">Fix two dead Apollo blog links in the GraphQL cheat sheet</p></div>
-        <div class="lg-meta"><span class="pill">In review</span><a class="ext" href="https://github.com/OWASP/CheatSheetSeries/pull/3041" rel="noopener">PR #3041 <svg class="arr" aria-hidden="true"><use href="#i-ne"/></svg></a></div>
       </li>
       <li class="lg-row" data-status="proposed" data-project="google/skills">
         <span class="lg-dot" aria-hidden="true"></span>
@@ -954,7 +975,7 @@ footer{background:var(--navy-2);border-top:1px solid var(--line);color:var(--mut
 <!--LEDGER:END-->
     <p class="ledger">Every public issue and pull request I have opened in someone else's repository, read from GitHub and rebuilt every two hours. Merged comes only from GitHub's own merged flag; closed-unmerged items are left out.</p>
   </div>
-  <p class="srcm note" data-r><!--ASOF:START-->Ledger as of 24 Nov 2026, read from GitHub (account tausif-ahmed-guardian) and rebuilt every two hours.<!--ASOF:END--></p>
+  <p class="srcm note" data-r><!--ASOF:START-->Ledger as of 25 Nov 2026, read from GitHub (account tausif-ahmed-guardian) and rebuilt every two hours.<!--ASOF:END--></p>
 </div></section>
 
 <!-- WRITING -->
